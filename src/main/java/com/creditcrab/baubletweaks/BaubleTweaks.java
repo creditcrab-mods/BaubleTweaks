@@ -19,7 +19,7 @@ import thaumcraft.api.ThaumcraftApi;
 import java.io.File;
 
 @Mod(modid = BaubleTweaks.MODID, version = Tags.VERSION, name = "BaubleTweaks", acceptedMinecraftVersions = "[1.7.10]",
-dependencies = "after:Thaumcraft;after:ThaumicExploration;after:ThaumicTinkerer;after:Botania;after:ThermalExpansion")
+dependencies = "required-after:Baubles|Expanded;after:Thaumcraft;after:ThaumicExploration;after:ThaumicTinkerer;after:Botania;after:ThermalExpansion")
 public class BaubleTweaks {
 
     public static final String MODID = "baubletweaks";
