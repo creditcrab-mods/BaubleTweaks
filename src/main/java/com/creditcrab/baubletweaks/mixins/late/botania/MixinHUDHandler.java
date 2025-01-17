@@ -3,6 +3,7 @@ package com.creditcrab.baubletweaks.mixins.late.botania;
 import baubles.api.BaublesApi;
 import baubles.api.expanded.BaubleExpandedSlots;
 import baubles.common.lib.PlayerHandler;
+import com.creditcrab.baubletweaks.BaubleTweaks;
 import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.client.Minecraft;
@@ -32,7 +33,7 @@ public class MixinHUDHandler {
         Profiler profiler = mc.mcProfiler;
         if (event.type == RenderGameOverlayEvent.ElementType.HEALTH) {
             profiler.startSection("botania-hud");
-            ItemStack tiara = BaublesApi.getBaubles(mc.thePlayer).getStackInSlot(BaubleExpandedSlots.getIndexesOfAssignedSlotsOfType(BaubleExpandedSlots.headType)[0]);
+            ItemStack tiara = BaublesApi.getBaubles(mc.thePlayer).getStackInSlot(BaubleTweaks.HEAD);
             if (tiara != null && tiara.getItem() == ModItems.flightTiara) {
                 profiler.startSection("flugelTiara");
                 ItemFlightTiara.renderHUD(event.resolution, mc.thePlayer, tiara);

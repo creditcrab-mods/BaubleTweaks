@@ -32,6 +32,7 @@ public abstract class MixinItemHolyCloak extends ItemBauble implements IBaubleRe
 
     private static String[] baubleTypes;
 
+
     public MixinItemHolyCloak(String name) {
         super(name);
     }

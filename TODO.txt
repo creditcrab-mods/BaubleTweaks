@@ -1,1 +1,1 @@
-
+//TODO: Cache Result of getIndexesOfAssignedSlotsOfType so it is not called every time

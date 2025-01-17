@@ -6,6 +6,7 @@ import baubles.api.expanded.BaubleItemHelper;
 import baubles.api.expanded.IBaubleExpanded;
 import baubles.common.BaublesExpanded;
 import baubles.common.lib.PlayerHandler;
+import com.creditcrab.baubletweaks.BaubleTweaks;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -63,7 +64,7 @@ public abstract class MixinItemFlightTiara extends ItemBauble implements IBauble
      */
     @Overwrite
     public boolean shouldPlayerHaveFlight(EntityPlayer player){
-        ItemStack tiara = BaublesApi.getBaubles(player).getStackInSlot(BaubleExpandedSlots.getIndexOfTypeInRegisteredTypes(BaubleExpandedSlots.headType));
+        ItemStack tiara = BaublesApi.getBaubles(player).getStackInSlot(BaubleTweaks.HEAD);
         if (tiara != null && tiara.getItem() == this) {
             int left = ItemNBTHelper.getInt(tiara, "timeLeft", 1200);
             boolean flying = ItemNBTHelper.getBoolean(tiara, "flying", false);
@@ -86,7 +87,7 @@ public abstract class MixinItemFlightTiara extends ItemBauble implements IBauble
     public void updatePlayerFlyStatus(LivingEvent.LivingUpdateEvent event) {
         if (event.entityLiving instanceof EntityPlayer) {
             EntityPlayer player = (EntityPlayer)event.entityLiving;
-            ItemStack tiara = BaublesApi.getBaubles(player).getStackInSlot(BaubleExpandedSlots.getIndexesOfAssignedSlotsOfType(BaubleExpandedSlots.headType)[0]);
+            ItemStack tiara = BaublesApi.getBaubles(player).getStackInSlot(BaubleTweaks.HEAD);
             int left = ItemNBTHelper.getInt(tiara, "timeLeft", 1200);
             //System.out.println("timeleft " + left);
             if (playersWithFlight.contains(playerStr(player))) {

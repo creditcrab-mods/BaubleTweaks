@@ -5,6 +5,7 @@ import baubles.api.expanded.BaubleExpandedSlots;
 import baubles.api.expanded.IBaubleExpanded;
 import baubles.common.BaublesExpanded;
 import baubles.common.container.InventoryBaubles;
+import com.creditcrab.baubletweaks.BaubleTweaks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.entity.Entity;
@@ -60,7 +61,7 @@ public abstract class MixinTileNodeRenderer extends TileEntitySpecialRenderer {
                     depthIgnore = true;
                     viewDistance = 48.0;
                 }
-                else if(baubles.func_70301_a(BaubleExpandedSlots.getIndexOfTypeInRegisteredTypes(BaubleExpandedSlots.headType)) != null && baubles.func_70301_a(BaubleExpandedSlots.getIndexOfTypeInRegisteredTypes(BaubleExpandedSlots.headType)).getItem() instanceof  IRevealer){
+                else if(baubles.func_70301_a(BaubleTweaks.HEAD) != null && baubles.func_70301_a(BaubleTweaks.HEAD).getItem() instanceof IRevealer){
                     condition = true;
                     depthIgnore = true;
 

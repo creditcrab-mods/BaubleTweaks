@@ -25,6 +25,10 @@ public class BaubleTweaks {
     public static final String MODID = "baubletweaks";
     public static final Logger LOG = LogManager.getLogger(MODID);
 
+    public static int HEAD;
+    public static int BODY;
+    public static int CHARM;
+
     public static  Configuration CONFIGURATION;
 
 
@@ -39,5 +43,18 @@ public class BaubleTweaks {
         BaubleExpandedSlots.tryAssignSlotsUpToMinimum(BaubleExpandedSlots.bodyType,1);
         BaubleExpandedSlots.tryAssignSlotsUpToMinimum(BaubleExpandedSlots.charmType,1);
 
+    }
+
+    @Mod.EventHandler
+    public void postInit(FMLInitializationEvent event)throws Exception{
+        try {
+            HEAD = BaubleExpandedSlots.getIndexesOfAssignedSlotsOfType(BaubleExpandedSlots.headType)[0];
+            BODY = BaubleExpandedSlots.getIndexesOfAssignedSlotsOfType(BaubleExpandedSlots.headType)[0];
+            CHARM = BaubleExpandedSlots.getIndexesOfAssignedSlotsOfType(BaubleExpandedSlots.headType)[0];
+        }
+        catch (IndexOutOfBoundsException e){
+            //LOG.error("The required bauble slots have been overridden");
+            throw new Exception("The required bauble slots have been overridden, remove the overrides in the Baubles Expanded config") ;
+        }
     }
 }

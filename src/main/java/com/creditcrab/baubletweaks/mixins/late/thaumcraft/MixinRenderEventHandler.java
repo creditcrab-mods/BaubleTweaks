@@ -3,6 +3,7 @@ package com.creditcrab.baubletweaks.mixins.late.thaumcraft;
 import baubles.api.BaublesApi;
 import baubles.api.expanded.BaubleExpandedSlots;
 import baubles.common.container.InventoryBaubles;
+import com.creditcrab.baubletweaks.BaubleTweaks;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -72,7 +73,7 @@ public abstract class MixinRenderEventHandler {
             }
         }
         InventoryBaubles baubles = (InventoryBaubles) BaublesApi.getBaubles((event.player) );
-        ItemStack baubleStack = baubles.func_70301_a(BaubleExpandedSlots.getIndexOfTypeInRegisteredTypes(BaubleExpandedSlots.headType));
+        ItemStack baubleStack = baubles.func_70301_a(BaubleTweaks.HEAD);
         Item baubleItem = baubleStack == null ? null : baubleStack.getItem();
         IGoggles bauble = baubleItem instanceof IGoggles ? (IGoggles) baubleItem : null;
 
