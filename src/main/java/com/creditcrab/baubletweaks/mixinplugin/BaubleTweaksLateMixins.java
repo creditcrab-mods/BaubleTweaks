@@ -92,6 +92,9 @@ public class BaubleTweaksLateMixins implements ILateMixinLoader {
             if (FMLLaunchHandler.side().isClient()){
                 mixins.add("thaumcraft.MixinTileNodeRenderer");
                 mixins.add("thaumcraft.MixinRenderEventHandler");
+                if(Loader.isModLoaded("Gadomancy")){
+                    mixins.add("gadomancy.MixinRenderTileNodeBasic");
+                }
             }
             mixins.add("thaumcraft.MixinItemGoggles");
             mixins.add("thaumcraft.MixinItemResource");

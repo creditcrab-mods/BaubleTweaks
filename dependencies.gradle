@@ -42,6 +42,7 @@ dependencies {
     devOnlyNonPublishable("curse.maven:cofhcore-69162:2388750")
     devOnlyNonPublishable("curse.maven:thermalfoundation-222880:2388752")
     devOnlyNonPublishable deobfCurse("thermalexpansion-69163:2388758")
+    devOnlyNonPublishable deobfCurse("gadomancy-237271:2338768")
     implementation("maven.modrinth:baubles-expanded:2.1.4")
     runtimeOnlyNonPublishable("curse.maven:endercore-231868:4671288")
 }
